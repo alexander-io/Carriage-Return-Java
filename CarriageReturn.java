@@ -7,26 +7,21 @@ class CarriageReturn{
     cr.slashLoader(1);
   }
 
-  public static void main(String[] args){
-
-  }
-
   public void slashLoader(int numLines) throws InterruptedException{
     if (numLines < 1 || numLines > 3)
     {
       numLines = 3;
     }
-//    String[] circCharArr = {"|", "/", "—", "\\", "|", "/", "—", "\\"};
 
     System.out.println("array length : " + circCharArr.length);
     while(true){
       for (int i = 0; i < circCharArr.length; i++) {
+				// if we've reached the end of array, reset the iterator
         if (i == circCharArr.length)
         {
-          // System.out.print("\r" + circCharArr[i] + "\t\r" + circCharArr[i-1] + "\t\r" + circCharArr[i-2]);
           i = 0;
-          // continue;
         }
+
         //Pause for 1 second
         Thread.sleep(100);
 
@@ -68,6 +63,7 @@ class CarriageReturn{
             "\t" +
             circCharArr[(i+16)%circCharArr.length]
             );
+						// uncomment this line for "rainfall"
             // System.out.println();
             break;
           case 2:
